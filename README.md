@@ -1,14 +1,14 @@
-# Hotel Management App 🥙
+# Sistem Jual beli Rumah APP 🏠
 ### [ Type ] : College Project
 
 ### [Group 12]
-- [MUHAMMAD ASTHI SETA ARI YUWANA (1201230019)](github.com/AkuraDiary)
+- [MUHAMMAD RIZKY FEBRIYANTO (1201230037)](github.com/duriskifeb)
 `lead programmer`
   
-- [DAVID WAHYU HERDYANSYAH (1201230011)](github.com/David-NTB)
+- [Dita (1201230011)](github.com/)
 `second programmer`
 
-- [RYAN ADIKA WICAKSANA (1201230016)](github.com/Xianzunn)
+- [wahyu parkir (1201230016)](github.com/)
 `report and documenter`
 
 [ Description ] :
