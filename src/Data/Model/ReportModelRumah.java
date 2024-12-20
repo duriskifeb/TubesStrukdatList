@@ -12,15 +12,15 @@ public class ReportModelRumah {
     private Date rangeStart;
     private String reportNumber;
     private Date dateCreated, dateUpdated;
-    private ArrayList<Transaksi> listTransaksi;
+    private ArrayList<TransaksiRumah> listTransaksi;
     private User reportPIC;
 
     public ReportModelRumah(
             String reportNumber,
             Date dateCreated,
             Date dateUpdated,
-            ArrayList<Transaksi> listTransaksi,
-            User reportPIC,
+            ArrayList<TransaksiRumah> listTransaksi,
+            UserRumah reportPIC, //
             Date rangeStart,
             Date rangeEnd) {
         this.reportNumber = reportNumber;
@@ -35,13 +35,14 @@ public class ReportModelRumah {
 
     public ReportModelRumah(
             Date dateCreated,
-            ArrayList<Transaksi> listTransaksi,
+            ArrayList<TransaksiRumah> listTransaksi,
             User reportPIC,
             Date rangeStart,
             Date rangeEnd) {
         String totalPrice = String.valueOf(
-                listTransaksi.stream().mapToDouble(Transaksi::getTotal).sum());
-        String transaksiNumberSum = listTransaksi.stream().map(Transaksi::getNoTransaksi)
+                listTransaksi.stream().mapToDouble(TransaksiRumah::getTotal).sum());
+        String transaksiNumberSum = listTransaksi.stream().map(
+                TransaksiRumah::getNoTransaksi)
                 .collect(Collectors.joining("-"));
 
         this.reportNumber = Generator.generateReportNumber(
@@ -81,11 +82,11 @@ public class ReportModelRumah {
         this.dateUpdated = dateUpdated;
     }
 
-    public ArrayList<Transaksi> getListTransaksi() {
+    public ArrayList<TransaksiRumah> getListTransaksi() {
         return listTransaksi;
     }
 
-    public void setListTransaksi(ArrayList<Transaksi> listTransaksi) {
+    public void setListTransaksi(ArrayList<TransaksiRumah> listTransaksi) {
         this.listTransaksi = listTransaksi;
     }
 

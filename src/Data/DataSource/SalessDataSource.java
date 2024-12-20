@@ -1,5 +1,6 @@
 package Data.DataSource;
 
+import Data.Model.TransaksiRumah;
 import Data.Model.User;
 import Data.Model.UserRumah;
 import Data.AppEnums.AppRumahEnums;
@@ -9,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SalessDataSource {
+
+    private ArrayList<TransaksiRumah> listTransaksi; //
 
     private ArrayList<UserRumah> listRumah = new ArrayList<>(
             Arrays.asList(
@@ -45,6 +48,10 @@ public class SalessDataSource {
 
     public void setNewSales(UserRumah csRumah) {
         this.listRumah = listRumah;
+    }
+
+    public ArrayList<TransaksiRumah> getListTransaksi() {
+        return listTransaksi;
     }
 
     public UserRumah getNewSales(String ID) {

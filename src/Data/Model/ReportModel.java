@@ -7,10 +7,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.stream.Collectors;
 
-
 public class ReportModel {
     private Date rangeEnd;
-    private  Date rangeStart;
+    private Date rangeStart;
     private String reportNumber;
     private Date dateCreated, dateUpdated;
     private ArrayList<Transaksi> listTransaksi;
@@ -23,8 +22,7 @@ public class ReportModel {
             ArrayList<Transaksi> listTransaksi,
             User reportPIC,
             Date rangeStart,
-            Date rangeEnd
-    ) {
+            Date rangeEnd) {
         this.reportNumber = reportNumber;
         this.dateCreated = dateCreated;
         this.dateUpdated = dateUpdated;
@@ -35,24 +33,22 @@ public class ReportModel {
         this.rangeEnd = rangeEnd;
     }
 
-    public ReportModel(
+    public ReportModel( // th
             Date dateCreated,
             ArrayList<Transaksi> listTransaksi,
             User reportPIC,
             Date rangeStart,
-            Date rangeEnd
-    ) {
+            Date rangeEnd) {
         String totalPrice = String.valueOf(
-          listTransaksi.stream().mapToDouble(Transaksi::getTotal).sum()
-        );
-        String transaksiNumberSum = listTransaksi.stream().map(Transaksi::getNoTransaksi).collect(Collectors.joining("-"));
+                listTransaksi.stream().mapToDouble(Transaksi::getTotal).sum());
+        String transaksiNumberSum = listTransaksi.stream().map(Transaksi::getNoTransaksi)
+                .collect(Collectors.joining("-"));
 
         this.reportNumber = Generator.generateReportNumber(
                 reportPIC.getNama(),
                 Formatting.formatDate(dateCreated),
                 totalPrice,
-                transaksiNumberSum
-                );
+                transaksiNumberSum);
         this.dateCreated = dateCreated;
         this.listTransaksi = listTransaksi;
         this.reportPIC = reportPIC;
