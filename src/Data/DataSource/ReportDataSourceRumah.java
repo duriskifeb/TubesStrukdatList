@@ -1,17 +1,35 @@
 package Data.DataSource;
 
-import Util.Formatting;
-import Util.Generator;
+import Data.Model.ReportModelRumah;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.stream.Collectors;
 
 public class ReportDataSourceRumah {
-    private Date rangeEnd;
-    private Date rangeStart;
-    private Date repotNumber;
-    private Date dateCreated, datUpdated;
-    private ArrayList<>
 
+    private ArrayList<ReportModelRumah> listReports = new ArrayList<>();
+
+    public ArrayList<ReportModelRumah> getListReports() {
+        return listReports;
+    }
+
+    public void setListReports(ArrayList<ReportModelRumah> listReports) {
+        this.listReports = listReports;
+    }
+
+    public ReportModelRumah getReport(String noReport) {
+        return listReports.stream().filter(
+                cekReport -> cekReport.getReportNumber().equals(noReport)).findFirst().orElse(null);
+    }
+
+    public void addNewReport(ReportModelRumah report) {
+        this.listReports.add(report);
+    }
+
+    public void removeReport(ReportModelRumah report) {
+        this.listReports.remove(report);
+    }
+
+    public void editReport(int index, ReportModelRumah report) {
+        this.listReports.set(index, report);
+    }
 }
