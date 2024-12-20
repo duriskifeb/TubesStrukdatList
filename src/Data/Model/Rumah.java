@@ -1,5 +1,7 @@
 package Data.Model;
 
+// import Data.AppEnums.AppRumahEnums;
+
 public class Rumah {
     private String alamat;
     private String jenisRumah;
@@ -11,7 +13,7 @@ public class Rumah {
     // private List<String> fasilitas;
 
     public Rumah(String alamat, String jenisRumah, double luasBangunan, double luasTanah, int jumlahKamarTidur,
-            int jumlahKamarMandi, int jumlahLantai, double harga, String statusKepemilikan, List<String> fasilitas) {
+            int jumlahKamarMandi, int jumlahLantai, double harga, String statusKepemilikan) {
         this.alamat = alamat;
         this.jenisRumah = jenisRumah;
         this.luasBangunan = luasBangunan;
